@@ -74,8 +74,8 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({ isOpen, onClos
 
           <div className="p-3.5 bg-[#FFF9F2] rounded-2xl border border-orange-200 text-xs text-orange-950 space-y-1">
             <p className="font-bold text-orange-900">🔐 Kredensial Default Demo Admin:</p>
-            <p>Username: <code className="font-mono bg-orange-100 px-1.5 py-0.5 rounded text-orange-950 font-bold">admintk4</code></p>
-            <p>Password: <code className="font-mono bg-orange-100 px-1.5 py-0.5 rounded text-orange-950 font-bold">bismillah123</code></p>
+            <p>Username: <code className="font-mono bg-orange-100 px-1.5 py-0.5 rounded text-orange-950 font-bold">CHAT ADMIN DI UNTUK TESTING</code></p>
+            <p>Password: <code className="font-mono bg-orange-100 px-1.5 py-0.5 rounded text-orange-950 font-bold">bismillah123 </code></p>
           </div>
 
           <div className="space-y-1.5">
@@ -86,7 +86,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({ isOpen, onClos
                 type="text"
                 value={username}
                 onChange={e => setUsername(e.target.value)}
-                placeholder="admintk4"
+                placeholder="admin"
                 className="w-full pl-10 pr-4 py-3 rounded-2xl border border-slate-300 focus:ring-2 focus:ring-orange-500 text-sm font-semibold"
                 required
               />

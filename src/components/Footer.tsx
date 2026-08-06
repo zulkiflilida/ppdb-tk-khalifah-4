@@ -66,11 +66,11 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToTop, onOpenAdminLogin 
             </p>
             <p className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-orange-400 shrink-0" />
-              <span>Hotline WA: 0812-4567-8901 / 0852-9988-7766</span>
+              <span>Hotline WA: 081244404336 </span>
             </p>
             <p className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-orange-400 shrink-0" />
-              <span>ppdb@tkkhalifah4makassar.sch.id</span>
+              <span>tokivli@gmail.com</span>
             </p>
           </div>
 

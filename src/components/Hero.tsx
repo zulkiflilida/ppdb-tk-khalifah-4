@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToForm, onOpenCheckStatus, o
 
             {/* Subheadline */}
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl font-normal leading-relaxed mx-auto lg:mx-0">
-              Pelopor Pendidikan Anak Usia Dini Berbasis <strong className="text-orange-600 font-bold">Tauhid & Entrepreneurship</strong> sejak dini. Membentuk karakter anak yang sholeh, cerdas, mandiri, dan berakhlak mulia di Kota Makassar.
+              Pelopor Pendidikan Anak Usia Dini Berbasis <strong className="text-orange-600 font-bold">Tauhid & Entrepreneurship</strong> sejak dini. Membentuk karakter anak yang sholeh, cerdas, mandiri, dan berakhlak mulia di Kota Makassar. WEBSITE INI PROTOTYPE DARI ZULKIFLI LIDA 081244404336
             </p>
 
             {/* Feature Pills */}

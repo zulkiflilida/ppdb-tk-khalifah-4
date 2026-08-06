@@ -250,11 +250,11 @@ export const SchoolProfile: React.FC<SchoolProfileProps> = ({ onScrollToForm }) 
             <div className="space-y-2 text-xs text-slate-300">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-orange-400" />
-                <span>WhatsApp Panitia: 0812-4567-8901 / 0852-9988-7766</span>
+                <span>WhatsApp Panitia: 081244404336</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-orange-400" />
-                <span>Email: ppdb@tkkhalifah4makassar.sch.id</span>
+                <span>Email: tokivli@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-orange-400" />
