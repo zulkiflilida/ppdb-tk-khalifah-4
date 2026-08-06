@@ -1,0 +1,6 @@
+{
+  "name": "PPDB TK Khalifah 4 Makassar",
+  "description": "Sistem Penerimaan Peserta Didik Baru TK Khalifah 4 Makassar berbasis Google Sheets & Apps Script (Zero-Cost Architecture) dengan Portal Wali Murid & Admin Dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
