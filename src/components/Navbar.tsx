@@ -79,21 +79,21 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center justify-between h-20">
           
           {/* Brand Logo */}
-          <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="w-12 h-12 rounded-2xl bg-orange-500 text-white flex items-center justify-center font-bold shadow-lg shadow-orange-200">
-              <GraduationCap className="w-7 h-7 text-white" />
+          <div className="flex items-center gap-2.5 sm:gap-3 cursor-pointer select-none" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-orange-500 text-white flex items-center justify-center font-bold shadow-lg shadow-orange-200/50 shrink-0">
+              <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className={`font-black text-xl tracking-tight ${scrolled ? 'text-slate-900' : 'text-white'}`}>
+              <div className="flex items-center gap-1.5">
+                <span className={`font-black text-base sm:text-xl tracking-tight leading-tight ${scrolled ? 'text-slate-900' : 'text-white'}`}>
                   TK KHALIFAH 4
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-orange-500 text-white px-2 py-0.5 rounded-full shadow-xs">
+                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-orange-500 text-white px-1.5 sm:px-2 py-0.5 rounded-full shadow-xs">
                   Makassar
                 </span>
               </div>
-              <p className={`text-xs font-medium ${scrolled ? 'text-orange-600' : 'text-slate-400'}`}>
-                Membentuk Anak Sholeh & Entrepreneur Cilik
+              <p className={`text-[11px] sm:text-xs font-medium line-clamp-1 ${scrolled ? 'text-orange-600' : 'text-slate-300'}`}>
+                Tauhid & Entrepreneurship Cilik
               </p>
             </div>
           </div>
@@ -174,70 +174,86 @@ export const Navbar: React.FC<NavbarProps> = ({
             )}
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-2">
-            <button
-              onClick={onOpenCheckStatus}
-              className="p-2 rounded-2xl bg-orange-500 text-white text-xs font-bold flex items-center gap-1 shadow-sm"
-            >
-              <Search className="w-4 h-4" />
-              <span>Cek Status</span>
-            </button>
+          {/* Mobile Menu Actions */}
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-2xl ${scrolled ? 'text-slate-800' : 'text-white'}`}
+              className={`p-2 rounded-xl transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center cursor-pointer ${
+                scrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-slate-800'
+              }`}
+              aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-6 h-6 text-orange-400" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Menu Drawer Overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-slate-900 text-white border-t border-slate-800 px-4 py-6 space-y-4">
-          <div className="flex flex-col space-y-3">
-            <button 
-              onClick={() => {
-                setMobileMenuOpen(false);
-                if (showingAdminDashboard) onToggleAdminView();
-                onScrollToInfo();
-              }}
-              className="text-left py-2 font-medium text-slate-300 hover:text-white"
-            >
-              Profil & Program Unggulan
-            </button>
-            <button 
-              onClick={() => {
-                setMobileMenuOpen(false);
-                if (showingAdminDashboard) onToggleAdminView();
-                onScrollToForm();
-              }}
-              className="text-left py-2 font-medium text-slate-300 hover:text-white"
-            >
-              Alur & Syarat Pendaftaran
-            </button>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenCheckStatus();
-              }}
-              className="text-left py-2 font-medium text-orange-400 flex items-center gap-2"
-            >
-              <Search className="w-4 h-4" />
-              Cek Status Pendaftaran & Kelulusan
-            </button>
+        <div className="lg:hidden bg-slate-900/98 backdrop-blur-xl text-white border-t border-slate-800 px-4 py-5 shadow-2xl animate-in slide-in-from-top duration-200">
+          <div className="max-w-md mx-auto space-y-3">
+            
+            <div className="p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80 flex items-center justify-between text-xs text-slate-300">
+              <span className="flex items-center gap-1.5 font-medium">
+                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                PPDB TA 2026/2027 Gelombang 1
+              </span>
+              <a 
+                href="https://wa.me/6281245678901?text=Halo%20Admin%20TK%20Khalifah%204%20Makassar,%20saya%20ingin%20bertanya%20seputar%20PPDB"
+                target="_blank"
+                rel="noreferrer"
+                className="text-orange-400 font-bold hover:underline text-[11px]"
+              >
+                WA Admin
+              </a>
+            </div>
 
-            <div className="pt-2 border-t border-slate-800 flex flex-col gap-2">
+            <div className="flex flex-col gap-1 pt-1">
+              <button 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  if (showingAdminDashboard) onToggleAdminView();
+                  onScrollToInfo();
+                }}
+                className="text-left px-3 py-2.5 rounded-xl font-semibold text-sm text-slate-200 hover:text-white hover:bg-slate-800/60 transition-colors flex items-center gap-2"
+              >
+                <span>✨ Profil & Program Unggulan</span>
+              </button>
+
+              <button 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  if (showingAdminDashboard) onToggleAdminView();
+                  onScrollToForm();
+                }}
+                className="text-left px-3 py-2.5 rounded-xl font-semibold text-sm text-slate-200 hover:text-white hover:bg-slate-800/60 transition-colors flex items-center gap-2"
+              >
+                <span>📋 Alur & Syarat Pendaftaran</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenCheckStatus();
+                }}
+                className="text-left px-3 py-2.5 rounded-xl font-bold text-sm text-orange-400 bg-orange-500/10 border border-orange-500/20 hover:bg-orange-500/20 transition-colors flex items-center gap-2"
+              >
+                <Search className="w-4 h-4 text-orange-400" />
+                <span>Cek Status Pendaftaran</span>
+              </button>
+            </div>
+
+            <div className="pt-3 border-t border-slate-800/80 flex flex-col gap-2.5">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   if (showingAdminDashboard) onToggleAdminView();
                   onScrollToForm();
                 }}
-                className="w-full bg-orange-500 text-white py-3 rounded-2xl font-black text-center shadow-lg shadow-orange-200"
+                className="w-full bg-orange-500 hover:bg-orange-400 text-white py-3.5 rounded-2xl font-black text-sm text-center shadow-lg shadow-orange-500/20 active:scale-98 transition-all"
               >
-                Formulir Pendaftaran
+                Isi Formulir Pendaftaran Online
               </button>
 
               {isAdminLoggedIn ? (
@@ -246,10 +262,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                     setMobileMenuOpen(false);
                     onToggleAdminView();
                   }}
-                  className="w-full bg-slate-800 text-white py-2.5 rounded-2xl font-bold flex items-center justify-center gap-2"
+                  className="w-full bg-slate-800 hover:bg-slate-700 text-white py-3 rounded-2xl font-bold text-xs flex items-center justify-center gap-2 border border-slate-700 transition-colors"
                 >
                   <ShieldCheck className="w-4 h-4 text-orange-400" />
-                  {showingAdminDashboard ? 'Kembali ke Portal Wali' : 'Buka Dasbor Admin'}
+                  <span>{showingAdminDashboard ? 'Kembali ke Portal Wali' : 'Buka Dasbor Admin'}</span>
                 </button>
               ) : (
                 <button
@@ -257,13 +273,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                     setMobileMenuOpen(false);
                     onOpenAdminLogin();
                   }}
-                  className="w-full text-center py-2 text-xs text-slate-400 flex items-center justify-center gap-1"
+                  className="w-full text-center py-2.5 text-xs font-semibold text-slate-400 hover:text-white flex items-center justify-center gap-1.5 transition-colors"
                 >
-                  <Lock className="w-3 h-3" />
-                  Login Panitia / Admin Sekolah
+                  <Lock className="w-3.5 h-3.5 text-orange-400" />
+                  <span>Login Portal Admin / Panitia</span>
                 </button>
               )}
             </div>
+
           </div>
         </div>
       )}
